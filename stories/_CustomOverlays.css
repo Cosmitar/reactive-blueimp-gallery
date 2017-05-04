@@ -1,0 +1,10 @@
+.blueimp-gallery > .description {
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  color: green;
+  display: none;
+}
+.blueimp-gallery-controls > .description {
+  display: block;
+}

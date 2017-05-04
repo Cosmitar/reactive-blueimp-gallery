@@ -1,0 +1,43 @@
+{
+  "name": "blueimp-react",
+  "version": "0.1.0",
+  "description": "A React wrapper for Blueimp gallery",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint components/ReactBlueImpGallery",
+    "build": "node ./node_modules/babel-cli/bin/babel.js -d dist/ components/ReactBlueImpGallery --source-maps",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -s ./public -p 9001",
+    "test-storybook": "storyshots"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cosmitar/reactive-blueimp-gallery.git"
+  },
+  "keywords": [
+    "reactjs"
+  ],
+  "author": "Cosmitar",
+  "license": "MIT",
+  "dependencies": {
+    "blueimp-gallery": "^2.25.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-babili": "0.0.12",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-rackt": "^1.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3"
+  }
+}
