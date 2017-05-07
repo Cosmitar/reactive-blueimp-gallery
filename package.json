@@ -22,12 +22,12 @@
   "author": "Cosmitar",
   "license": "MIT",
   "dependencies": {
-    "@kadira/storybook-deployer": "^1.2.0",
     "blueimp-gallery": "^2.25.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
+    "@kadira/storybook-deployer": "^1.2.0",
     "@kadira/storybook": "^2.35.3",
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
