@@ -1,7 +1,7 @@
 # React + BlueImp Gallery :sunrise_over_mountains:
 ### NOW! Your favorite [gallery](https://github.com/blueimp/Gallery) as a React component ;)
 
-This project is a tribute to a wonderful tool as BlueImp Gallery mixed with an awesome devel sandbox like Storybook.
+This project is a tribute to a wonderful tool as [BlueImp Gallery](https://blueimp.github.io/Gallery/) mixed with an awesome devel sandbox like [Storybook](https://storybooks.js.org/).
 As a result we have a useful React component for a flexible slideshow gallery.
 
 ### How to start
@@ -172,7 +172,7 @@ Though this approach really works (you can [see it here](https://cosmitar.github
 ### Test and working examples
 You can find many full working examples into ./stories folder of this repo.
 clone this repo
-`git clone https://`
+`git clone https://github.com/Cosmitar/reactive-blueimp-gallery.git`
 
 install dependecies
 `npm i`
