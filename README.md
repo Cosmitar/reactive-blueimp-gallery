@@ -4,11 +4,11 @@
 This project is a tribute to a wonderful tool as [BlueImp Gallery](https://blueimp.github.io/Gallery/) mixed with an awesome devel sandbox like [Storybook](https://storybooks.js.org/).
 As a result we have a useful React component for a flexible slideshow gallery.
 
-### How to start
+### :point_up:How to start
 install Reactive Blueimp Gallery in your project
 `npm install --save reactive-blueimp-gallery`
 
-### Usage
+### :v:Usage
 import the library into your component
 ```javascript
 import ReactGallery from 'reactive-blueimp-gallery';
