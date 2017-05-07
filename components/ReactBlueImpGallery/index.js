@@ -63,7 +63,7 @@ class ReactBlueImpGallery extends React.Component {
       document.getElementById(`${id}-links`).onclick = function (event) {
         event = event || window.event;
         const target = event.target || event.srcElement;
-        const link = target.parentNode;
+        const link = target.src ? target.parentNode : target;
         const opts = Object.assign({}, {
           index: link,
           event: event,
