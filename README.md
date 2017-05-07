@@ -1,4 +1,4 @@
-# React + BlueImp Gallery :sunrise_over_mountains:
+# [React + BlueImp Gallery](https://cosmitar.github.io/reactive-blueimp-gallery/) :sunrise_over_mountains:
 ### NOW! Your favorite [gallery](https://github.com/blueimp/Gallery) as a React component ;)
 
 This project is a tribute to a wonderful tool as [BlueImp Gallery](https://blueimp.github.io/Gallery/) mixed with an awesome devel sandbox like [Storybook](https://storybooks.js.org/).
