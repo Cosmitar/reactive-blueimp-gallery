@@ -170,13 +170,18 @@ Though this approach really works (you can [see it here](https://cosmitar.github
 ### Test and working examples
 You can find many full working examples into ./stories folder of this repo.
 clone this repo
+
 `git clone https://github.com/Cosmitar/reactive-blueimp-gallery.git`
 
 install dependecies
+
 `npm i`
 
 start storybook
+
 `npm run storybook`
+
+Have fun :tada:
 
 ### Contributing
 Pull requests and issues are welcome. If you've found an bug, please open an issue.
