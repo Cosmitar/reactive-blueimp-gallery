@@ -1,4 +1,187 @@
-# React + BlueImp Gallery
+# React + BlueImp Gallery :sunrise_over_mountains:
 ### NOW! Your favorite [gallery](https://github.com/blueimp/Gallery) as a React component ;)
 
-WIP
+This project is a tribute to a wonderful tool as BlueImp Gallery mixed with an awesome devel sandbox like Storybook.
+As a result we have a useful React component for a flexible slideshow gallery.
+
+### How to start
+install Reactive Blueimp Gallery in your project
+`npm install --save reactive-blueimp-gallery`
+
+### Usage
+import the library into your component
+```javascript
+import ReactGallery from 'reactive-blueimp-gallery';
+```
+
+Set a source with minimum requirements
+```javascript
+const sources = [{
+  source: 'images/banana.jpg',
+}, {
+  source: 'images/apples.jpg',
+}, {
+  source: 'images/orange.jpg',
+}];
+```
+
+Use the component
+```javascript
+<ReactGallery>
+  { sources.map((item) => {
+    return <ReactGallery.Slide { ...item } key={ item.source } />;
+  })}
+</ReactGallery>
+```
+
+and that's it! :raised_hands: a working version of BlueImp gallery into your React application :muscle:.
+
+### Options
+As a wrapper, this lib has some shortcut configurations for a [full list of options](https://github.com/blueimp/Gallery#options) that BlueImp Gallery offers.
+
+ReactBlueImpGallery accepts the following props:
+
+`id` and `className` are simple attributes rendered in gallery HTML, mainly to handle presentational aspects.
+
+`withControls` to initialize the Gallery with visible controls
+```javascript
+<ReactGallery withControls>
+...
+</ReactGallery>
+```
+
+`inlineCarousel` to display the images in an inline carousel instead of a lightbox
+```javascript
+<ReactGallery inlineCarousel>
+...
+</ReactGallery>
+```
+
+`options` to send to BlueImp Gallery any of the [supported options](https://github.com/blueimp/Gallery#options).
+```javascript
+<ReactGallery
+  options={{
+    transitionSpeed: 200,
+  }}
+>
+...
+</ReactGallery>
+```
+
+`overlays` to send custom overlays for slides. Lets talk about this in the next section
+
+And finally, into `options` prop you can find a useful custom event `onopen` that return the original BlueImp Gallery instance allowing API control. See full API methods [here](https://github.com/blueimp/Gallery#api-methods)
+
+```javascript
+<ReactGallery
+  options={{
+    onopen: gal => gal.pause(),
+  }}
+>
+...
+</ReactGallery>
+```
+### Custom Overlays
+Reactive BlueImp Gallery come with a helper component to customize slides overlay. `Overlays` component allows you to include extra HTML elements over a slide and also has props to quick set up for existing elements. `Overlays` is part of `ReactiveBlueImpGalley` and can be accesed as an attribute of it.
+```javascript
+const customOverlays = (
+  <ReactGallery.Overlays>
+    <p className="footer-copywrite">&reg; 2017 All rights reserved</p>
+  </ReactGallery.Overlays>
+);
+<ReactGallery
+  overlays={customOverlays}
+>
+...
+</ReactGallery>
+```
+
+In the example above we're adding an element into slide overlay. Also you can define `Overlays` props
+
+`className` to specify overlay CSS.
+
+`noTitle` to hide default title element.
+
+`noArrows` to hide default arrows (next/prev) elements.
+
+`noClose` to hide default close (x) element.
+
+`noPlayPause` to hide default play/pause element.
+
+`noIndicator` to hide default slide indicator (ooo) elements.
+
+```javascript
+<ReactGallery
+  overlays={<ReactGallery.Overlays noPlayPause noTitle />}
+>
+...
+</ReactGallery>
+```
+
+### Slides
+The slide component it also come as ReactiveBlueImpGallery property. In the first example the slide component is receiving just one prop but they accept others.
+
+`source` for image or video resource, this is an alias of `href` also valid for images but not for video slides.
+
+`thumbanil` to set a resource to show in thumbanils. `source` will be used if `thumbnails` is undefined.
+
+`type` to set slide mime type. `image/jpeg` by default.
+
+`title` info to show in the slide overlay.
+
+### Slides with React content :rocket:
+BlueImp Gallery supports different [slide types](https://github.com/blueimp/Gallery#additional-content-types) with a very good approach to customize content types. This way it supports HTML5, Youtube and Vimeo videos. Taking advantage of that smart design, this lib add a new content type to handle slide content with React components.
+
+The content type is `text/react` (no real mime type for React) and you can implement your React component like the following example.
+```javascript
+const MyReactSlideContent = () => {
+  return <p>My React slide content</p>;
+}
+
+...
+
+<ReactGallery>
+  <ReactGallery.Slide
+    thumbnail="images/thumbnails/banana.jpg"
+    type="text/react" // to tell BlueImp Gallery which slide factory should use
+  >
+    <MyReactSlideContent />
+  </ReactGallery.Slide>
+</ReactGallery>
+```
+Of course you can have (or you'll need in real life scenarios) dynamic data into your React slide content, but if you need data from a parent component there's a little bit complex issue to solve. Since BlueImp Gallery is in charge of the slide render with vanilla javascript, React lost control of that HTML. In order to let React to render the slides, we're calling ReactDom method to draw custom component into the slide, but that way the scope of the component you wrote and the scope of the instance of your component into the slide are different. Then, a solution is an explicit definition of the data which should be sent to rendered instance of your componente. That can be achived setting a `Slide` prop called `SynchedData` like this
+```javascript
+const MyReactSlideContent = ({ slideCount }) => {
+  return <p>My React slide content with {slideCount}</p>;
+}
+
+...
+
+<ReactGallery>
+  <ReactGallery.Slide
+    thumbnail="images/thumbnails/banana.jpg"
+    type="text/react" // to tell BlueImp Gallery which slide factory should use
+    synchedData={{ slideCount: this.state.slideCount }} // this prop will be sent to <MyReactSlideContent />
+  >
+    <MyReactSlideContent />
+   </ReactGallery.Slide>
+</ReactGallery>
+```
+Though this approach really works (you can [see it here](https://cosmitar.github.io/reactive-blueimp-gallery/?selectedKind=React%20BlueImp%20Gallery&selectedStory=Custom%20React%20slide%20content&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) you sould be very cautious about implementing React components architecture into slide contents.
+
+### Test and working examples
+You can find many full working examples into ./stories folder of this repo.
+clone this repo
+`git clone https://`
+
+install dependecies
+`npm i`
+
+start storybook
+`npm run storybook`
+
+### Contributing
+Pull requests and issues are welcome. If you've found an bug, please open an issue.
+
+### License
+MIT
