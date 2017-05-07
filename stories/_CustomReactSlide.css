@@ -1,0 +1,15 @@
+.react-content.slide-content {
+    font-family: arial;
+}
+
+.react-content.slide-content p {
+    padding: 0 100px;
+    align-self: center;
+}
+
+.slide-content .react-slide {
+    display: flex;
+    height: 100%;
+    align-items: middle;
+    justify-content: center;
+}
