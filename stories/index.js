@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import ReactBlueImp from './../components/ReactBlueImpGallery';
+import ReactGallery from './../components/ReactBlueImpGallery';
 import APIControlled from './APIControlled';
 import CustomOverlays from './CustomOverlays';
 import CustomThumbnails from './CustomThumbnails';
@@ -58,16 +58,16 @@ const source3 = [{
 storiesOf('React BlueImp Gallery', module)
   .add('Basic usage', () => {
     return (
-      <ReactBlueImp>
+      <ReactGallery>
         { minimumSource.map((item) => {
-          return <ReactBlueImp.Slide { ...item } key={ item.source } />;
+          return <ReactGallery.Slide { ...item } key={ item.source } />;
         })}
-      </ReactBlueImp>
+      </ReactGallery>
     );
   })
   .add('With event callbacks', () => {
     return (
-      <ReactBlueImp
+      <ReactGallery
         options={{
           // onopen callback you'll get the Gallery instance.
           onopen: g => action('open')(g),
@@ -81,39 +81,39 @@ storiesOf('React BlueImp Gallery', module)
         }}
       >
         { source1.map((item) => {
-          return <ReactBlueImp.Slide { ...item } key={ item.source } />;
+          return <ReactGallery.Slide { ...item } key={ item.source } />;
         })}
-      </ReactBlueImp>
+      </ReactGallery>
     );
   })
   .add('Multiple galleries', () => (
     <div>
       {[source1, source2].map((source, index) => {
         return (
-          <ReactBlueImp key={index}>
+          <ReactGallery key={index}>
             { source.map((item) => {
-              return <ReactBlueImp.Slide { ...item } key={ item.source } />;
+              return <ReactGallery.Slide { ...item } key={ item.source } />;
             })}
-          </ReactBlueImp>
+          </ReactGallery>
         );
       })}
     </div>
   ))
   .add('Mixed content: images & videos', () => (
-    <ReactBlueImp withControls options={{ youTubeClickToPlay: false }}>
+    <ReactGallery withControls options={{ youTubeClickToPlay: false }}>
       { source3.map((item) => {
-        return <ReactBlueImp.Slide {...item} key={ item.href } />;
+        return <ReactGallery.Slide {...item} key={ item.href } />;
       })}
-    </ReactBlueImp>
+    </ReactGallery>
   ))
   .add('Inline carousel', () => (
-    <ReactBlueImp
+    <ReactGallery
       inlineCarousel
     >
       { source1.map((item) => {
-        return <ReactBlueImp.Slide { ...item } key={ item.source } />;
+        return <ReactGallery.Slide { ...item } key={ item.source } />;
       })}
-    </ReactBlueImp>
+    </ReactGallery>
   ))
   .add('API controlled carousel', () => (
     <APIControlled />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactBlueImp from './../components/ReactBlueImpGallery';
+import ReactGallery from './../components/ReactBlueImpGallery';
 
 class APIControlled extends Component {
   constructor(props) {
@@ -38,11 +38,11 @@ class APIControlled extends Component {
             <button onClick={this._slideTo.bind(this, index)} key={index}>{`Go to slide ${index + 1} ${item['data-description']}`}</button>
           );
         })}
-        <ReactBlueImp inlineCarousel options={{ onopen: this._onLoad }}>
+        <ReactGallery inlineCarousel options={{ onopen: this._onLoad }}>
           { this.state.source.map((item) => {
-            return <ReactBlueImp.Slide { ...item } key={ item.source } />;
+            return <ReactGallery.Slide { ...item } key={ item.source } />;
           })}
-        </ReactBlueImp>
+        </ReactGallery>
       </div>
     );
   }

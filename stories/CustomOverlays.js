@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactBlueImp from './../components/ReactBlueImpGallery';
+import ReactGallery from './../components/ReactBlueImpGallery';
 import './_CustomOverlays.css';
 
 class CustomOverlays extends React.Component {
@@ -27,14 +27,14 @@ class CustomOverlays extends React.Component {
   }
   render() {
     const overlays = (
-      <ReactBlueImp.Overlays noArrows>
+      <ReactGallery.Overlays noArrows>
         <p className="description">{this.state.source[this.state.currentIndex]['data-description']}</p>
         <a className="prev" style={{ border: 0, background: 'transparent', fontSize: 45 }}>◀️</a>
         <a className="next" style={{ border: 0, background: 'transparent', fontSize: 45 }}>▶️</a>
-      </ReactBlueImp.Overlays>
+      </ReactGallery.Overlays>
     );
     return (
-      <ReactBlueImp
+      <ReactGallery
         options={{
           onslide: index => this.setState({ currentIndex: index }),
         }}
@@ -42,9 +42,9 @@ class CustomOverlays extends React.Component {
         overlays={overlays}
       >
         { this.state.source.map((item) => {
-          return <ReactBlueImp.Slide {...item} key={ item.source } />;
+          return <ReactGallery.Slide {...item} key={ item.source } />;
         })}
-      </ReactBlueImp>
+      </ReactGallery>
     );
   }
 }

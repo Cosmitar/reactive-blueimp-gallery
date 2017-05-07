@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactBlueImp from './../components/ReactBlueImpGallery';
+import ReactGallery from './../components/ReactBlueImpGallery';
 
 const source = [{
   href: 'images/banana.jpg',
@@ -18,7 +18,7 @@ const source = [{
 class CustomThumbnails extends React.Component {
   render() {
     return (
-      <ReactBlueImp className="emoji">
+      <ReactGallery className="emoji">
         { source.map((item) => {
           const template = (
             <a {...item}
@@ -27,9 +27,9 @@ class CustomThumbnails extends React.Component {
               <p>{item['data-description']}</p>
             </a>
           );
-          return <ReactBlueImp.Slide {...item} key={ item.href } template={template} />;
+          return <ReactGallery.Slide {...item} key={ item.href } template={template} />;
         })}
-      </ReactBlueImp>
+      </ReactGallery>
     );
   }
 }
