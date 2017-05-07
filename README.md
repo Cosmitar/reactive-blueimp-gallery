@@ -127,7 +127,7 @@ The slide component it also comes as ReactiveBlueImpGallery property. In the fir
 
 :nut_and_bolt:`title` info to show in the slide overlay.
 
-### Slides with React content :rocket:
+### :sparkles: Slides with React content :rocket:
 BlueImp Gallery supports different [slide types](https://github.com/blueimp/Gallery#additional-content-types) with a very good approach to customize content types. This way it supports HTML5, Youtube and Vimeo videos. Taking advantage of that smart design, this lib add a new content type to handle slide content with React components.
 
 The content type is `text/react` (no real mime type for React) and you can implement your React component like the following example.
