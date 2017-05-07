@@ -76,7 +76,7 @@ class Slide extends React.Component {
       ...props
     } = this.props;
 
-    const src = source || href;
+    const src = source || href || thumbnail;
     const tn = thumbnail || poster || src;
     const _title = title;
     return template ?
