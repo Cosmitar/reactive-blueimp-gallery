@@ -9,7 +9,7 @@ import './../../node_modules/blueimp-gallery/js/blueimp-gallery-fullscreen.js';
 import './ReactFactory';
 import Slide from './Slide';
 import Overlays from './Overlays';
-import { get_safe_html_uuid } from './utils';
+import { get_safe_html_uuid, constants } from './utils';
 
 import './../../node_modules/blueimp-gallery/css/blueimp-gallery.min.css';
 
@@ -112,9 +112,10 @@ class ReactBlueImpGallery extends React.Component {
 
     const { id } = this.state;
     const elementsVisibilityStyle = inlineCarousel ? { visibility: 'hidden' } : {};
+    const customClassName = className ? `${className}-thumbnails` : '';
 
     return (
-      <div id={`${id}-links`} style={elementsVisibilityStyle} className={`${className}-thumbnails`}>
+      <div id={`${id}-links`} style={elementsVisibilityStyle} className={`${customClassName} ${constants.DEFAULT_CLASS_NAME}-thumbnails`}>
 
         { children.map((child) => {
 
@@ -139,7 +140,7 @@ class ReactBlueImpGallery extends React.Component {
     const { id } = this.state;
     const withControlsClass = withControls ? 'blueimp-gallery-controls' : '';
     const inlineCarouselClass = inlineCarousel ? 'blueimp-gallery-carousel' : '';
-    const classNames = `${withControlsClass} ${inlineCarouselClass} ${className}`;
+    const classNames = `${withControlsClass} ${inlineCarouselClass} ${className} ${constants.DEFAULT_CLASS_NAME}`;
 
     return overlays ?
       React.cloneElement(overlays, {
@@ -166,7 +167,7 @@ ReactBlueImpGallery.defaultProps = {
   withControls: false,
   inlineCarousel: false,
   options: {},
-  className: 'react-blueimp',
+  className: '',
   overlays: null,
 };
 

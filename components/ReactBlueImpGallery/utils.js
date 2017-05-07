@@ -14,5 +14,6 @@ export const get_safe_html_uuid = () => {
 };
 
 export const constants = {
+  DEFAULT_CLASS_NAME: 'react-blueimp',
   REACT_MIME_TYPE: 'text/react',
 };

@@ -16,8 +16,8 @@ class CustomReactSlide extends React.Component {
         title: 'Apples',
         'data-description': '🍎🍎🍎',
       }, {
-        source: 'images/orange.png',
-        thumbnail: 'images/thumbnails/orange.png',
+        source: 'images/orange.jpg',
+        thumbnail: 'images/thumbnails/orange.jpg',
         title: 'Oranges',
         'data-description': '🍊🍊🍊',
       }],
@@ -50,7 +50,7 @@ class CustomReactSlide extends React.Component {
         </ReactBlueImp.Slide>
 
         <ReactBlueImp.Slide
-          source="images/thumbnails/orange.png"
+          source="images/thumbnails/orange.jpg"
           type="text/react"
           key="MyReactStaticSlideContent"
         >

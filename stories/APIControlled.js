@@ -13,14 +13,17 @@ class APIControlled extends Component {
         source: 'images/banana.jpg',
         thumbnail: 'images/thumbnails/banana.jpg',
         title: 'Bananas',
+        'data-description': '🍌',
       }, {
         source: 'images/apples.jpg',
         thumbnail: 'images/thumbnails/apples.jpg',
         title: 'Apples',
+        'data-description': '🍎',
       }, {
-        source: 'images/orange.png',
-        thumbnail: 'images/thumbnails/orange.png',
+        source: 'images/orange.jpg',
+        thumbnail: 'images/thumbnails/orange.jpg',
         title: 'Oranges',
+        'data-description': '🍊',
       }],
     };
   }
@@ -32,7 +35,7 @@ class APIControlled extends Component {
         <button onClick={this._prevSlide}>prev slide</button>
         {this.state.source.map((item, index) => {
           return (
-            <button onClick={this._slideTo.bind(this, index)} key={index}>{`Go to slide ${index + 1}`}</button>
+            <button onClick={this._slideTo.bind(this, index)} key={index}>{`Go to slide ${index + 1} ${item['data-description']}`}</button>
           );
         })}
         <ReactBlueImp inlineCarousel options={{ onopen: this._onLoad }}>

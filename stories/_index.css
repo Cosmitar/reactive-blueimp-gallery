@@ -1,3 +1,26 @@
 .react-blueimp-thumbnails > a > img {
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.react-blueimp-thumbnails {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.react-blueimp-thumbnails > a {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin: 5px;
+    height: 100px;
     width: 100px;
+    overflow: hidden;
+}
+
+.emoji-thumbnails {
+    font-size: 50px;
+    line-height: 0px;
+    text-align: center;
 }

@@ -17,8 +17,8 @@ class CustomOverlays extends React.Component {
         title: 'Apples',
         'data-description': '🍎🍎🍎',
       }, {
-        source: 'images/orange.png',
-        thumbnail: 'images/thumbnails/orange.png',
+        source: 'images/orange.jpg',
+        thumbnail: 'images/thumbnails/orange.jpg',
         title: 'Oranges',
         'data-description': '🍊🍊🍊',
       }],
