@@ -59,9 +59,7 @@ storiesOf('React BlueImp Gallery', module)
   .add('Basic usage', () => {
     return (
       <ReactGallery>
-        { minimumSource.map((item) => {
-          return <ReactGallery.Slide { ...item } key={ item.source } />;
-        })}
+        { minimumSource.map(item => <ReactGallery.Slide { ...item } key={ item.source } />) }
       </ReactGallery>
     );
   })
