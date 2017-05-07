@@ -168,7 +168,8 @@ const MyReactSlideContent = ({ slideCount }) => {
 Though this approach really works (you can [see it here](https://cosmitar.github.io/reactive-blueimp-gallery/?selectedKind=React%20BlueImp%20Gallery&selectedStory=Custom%20React%20slide%20content&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)), you sould be very cautious about implementing React components architecture into slide contents.
 
 ### Test and working examples
-You can find many full working examples into ./stories folder of this repo.
+You can find many full working examples into [./stories](https://github.com/Cosmitar/reactive-blueimp-gallery/tree/master/stories) folder.
+
 clone this repo
 
 `git clone https://github.com/Cosmitar/reactive-blueimp-gallery.git`
