@@ -13,6 +13,27 @@ export const get_safe_html_uuid = () => {
   return uuid;
 };
 
+export const generate_hash = (chain) => {
+  let hash = 0;
+  let i;
+  let chr;
+  if (chain.length === 0) {
+    return hash;
+  }
+  for (i = 0; i < chain.length; i++) {
+    chr = chain.charCodeAt(i);
+    hash = ((hash << 5) - hash) + chr;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash;
+};
+
+export const object_to_key = (obj) => {
+  return obj
+    ? generate_hash(Object.values(obj).reduce((a, b) => `${b}${a}`))
+    : '';
+};
+
 export const constants = {
   DEFAULT_CLASS_NAME: 'react-blueimp',
   REACT_MIME_TYPE: 'text/react',

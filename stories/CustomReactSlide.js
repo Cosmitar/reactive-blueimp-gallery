@@ -38,7 +38,6 @@ class CustomReactSlide extends React.Component {
         <ReactGallery.Slide
           thumbnail="images/thumbnails/banana.jpg"
           type="text/react"
-          key="MyReactStaticSlideContent"
         >
           <MyReactStaticSlideContent />
         </ReactGallery.Slide>
@@ -46,7 +45,6 @@ class CustomReactSlide extends React.Component {
         <ReactGallery.Slide
           thumbnail="images/thumbnails/apples.jpg"
           type="text/react"
-          key="MyAutoUpdateSlideContent"
         >
           <MyAutoUpdateSlideContent />
         </ReactGallery.Slide>
@@ -55,7 +53,6 @@ class CustomReactSlide extends React.Component {
           thumbnail="images/thumbnails/orange.jpg"
           type="text/react"
           synchedData={{ slideCount: this.state.slideCount }}
-          key="MySynchedDataSlideContent"
         >
           <MySynchedDataSlideContent />
         </ReactGallery.Slide>

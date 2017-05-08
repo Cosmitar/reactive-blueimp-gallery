@@ -9,7 +9,7 @@ import './../../node_modules/blueimp-gallery/js/blueimp-gallery-fullscreen.js';
 import './ReactFactory';
 import Slide from './Slide';
 import Overlays from './Overlays';
-import { get_safe_html_uuid, constants } from './utils';
+import { get_safe_html_uuid, object_to_key, constants } from './utils';
 
 import './../../node_modules/blueimp-gallery/css/blueimp-gallery.min.css';
 
@@ -118,11 +118,9 @@ class ReactBlueImpGallery extends React.Component {
       <div id={`${id}-links`} style={elementsVisibilityStyle} className={`${customClassName} ${constants.DEFAULT_CLASS_NAME}-thumbnails`}>
 
         { children.map((child) => {
-
-          const key = child.key || get_safe_html_uuid();
+          const key = child.key || object_to_key(child.props);
           this.slidesByKey[key] = child;
-
-          return React.cloneElement(child, { 'data-key': key });
+          return React.cloneElement(child, { key, 'data-key': key });
         })}
 
       </div>
