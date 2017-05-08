@@ -1,8 +1,8 @@
 {
   "name": "reactive-blueimp-gallery",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A React wrapper for BlueImp gallery",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "eslint": "eslint components/ReactBlueImpGallery",
     "build": "node ./node_modules/babel-cli/bin/babel.js -d dist/ components/ReactBlueImpGallery --source-maps",
