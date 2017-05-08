@@ -63,13 +63,17 @@ class ReactBlueImpGallery extends React.Component {
       document.getElementById(`${id}-links`).onclick = function (event) {
         event = event || window.event;
         const target = event.target || event.srcElement;
-        const link = target.src ? target.parentNode : target;
+        let link = target;
+        // link detection based on an allways present data-trigger attribute
+        while (!link.getAttribute('data-trigger')) {
+          link = link.parentNode;
+        }
+        const links = this.getElementsByTagName('a');
         const opts = Object.assign({}, {
           index: link,
           event: event,
           container: container,
         }, propOptions);
-        const links = this.getElementsByTagName('a');
         const gal = Gallery(links, opts); // eslint-disable-line new-cap
         setInstance(gal);
       };

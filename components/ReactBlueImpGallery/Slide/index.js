@@ -80,9 +80,9 @@ class Slide extends React.Component {
     const tn = thumbnail || poster || src;
     const _title = title;
     return template ?
-      React.cloneElement(template, { ...props })
+      React.cloneElement(template, { ...Object.assign({}, props, { 'data-trigger' : true }) })
     : (
-        <a href={src} title={_title} type={type} {...props}>
+        <a href={src} title={_title} type={type} {...Object.assign({}, props, { 'data-trigger': true })}>
             <img src={tn} alt={_title} />
         </a>
       );
