@@ -1,4 +1,25 @@
 {
   "presets": ["env", "babili", "react"],
-  "plugins": ["transform-async-to-generator", "transform-object-rest-spread"]
+  "plugins": [
+    "transform-async-to-generator",
+    "transform-object-rest-spread",
+    ["module-resolver", {
+        "alias": {
+            "blueimp-gallery-path": "./node_modules/blueimp-gallery"
+        }
+    }]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-async-to-generator",
+        "transform-object-rest-spread",
+        ["module-resolver", {
+          "alias": {
+            "blueimp-gallery-path": "./../node_modules/blueimp-gallery"
+          }
+        }]
+      ]
+    }
+  }
 }

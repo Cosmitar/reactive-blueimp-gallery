@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Gallery from 'blueimp-gallery';
-import './../../node_modules/blueimp-gallery/js/blueimp-gallery-video.js';
-import './../../node_modules/blueimp-gallery/js/blueimp-gallery-youtube.js';
-import './../../node_modules/blueimp-gallery/js/blueimp-gallery-vimeo.js';
-import './../../node_modules/blueimp-gallery/js/blueimp-gallery-indicator.js';
-import './../../node_modules/blueimp-gallery/js/blueimp-gallery-fullscreen.js';
+
+import 'blueimp-gallery-path/js/blueimp-gallery-video.js';
+import 'blueimp-gallery-path/js/blueimp-gallery-youtube.js';
+import 'blueimp-gallery-path/js/blueimp-gallery-vimeo.js';
+import 'blueimp-gallery-path/js/blueimp-gallery-indicator.js';
+import 'blueimp-gallery-path/js/blueimp-gallery-fullscreen.js';
+import 'blueimp-gallery-path/css/blueimp-gallery.min.css';
+
 import './ReactFactory';
 import Slide from './Slide';
 import Overlays from './Overlays';
 import { get_safe_html_uuid, object_to_key, constants } from './utils';
 
-import './../../node_modules/blueimp-gallery/css/blueimp-gallery.min.css';
 
 class ReactBlueImpGallery extends React.Component {
   constructor(props) {
