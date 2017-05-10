@@ -66,7 +66,7 @@ ReactBlueImpGallery accepts the following props:
 </ReactGallery>
 ```
 
-:nut_and_bolt:`overlays` to send custom overlays for slides. Lets talk about this in the next section
+:nut_and_bolt:`overlays` to send custom overlays for slides. Lets talk about this in the [next section](https://github.com/Cosmitar/reactive-blueimp-gallery#custom-overlays)
 
 And finally, into `options` prop you can find a useful custom event `onopen` that return the original BlueImp Gallery instance allowing API control. See full API methods [here](https://github.com/blueimp/Gallery#api-methods)
 
