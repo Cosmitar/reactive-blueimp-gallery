@@ -80,7 +80,7 @@ And finally, into `options` prop you can find a useful custom event `onopen` tha
 </ReactGallery>
 ```
 ### Custom Overlays
-Reactive BlueImp Gallery come with a helper component to customize slides overlay. `Overlays` component allows you to include extra HTML elements over a slide and also has props to quick set up for existing elements. `Overlays` is part of `ReactiveBlueImpGalley` and can be accesed as an attribute of it.
+Reactive BlueImp Gallery come with a helper component to customize slides overlay. `Overlays` component allows you to include extra HTML elements over a slide and also has props to quick set up for existing elements. `Overlays` is part of `ReactBlueImpGallery` and can be accesed as an attribute of it.
 ```javascript
 const customOverlays = (
   <ReactGallery.Overlays>
@@ -117,7 +117,7 @@ In the example above we're adding a `<p>` element into default slide overlay. Al
 ```
 
 ### Slides
-The slide component it also comes as ReactiveBlueImpGallery property. In the first example the slide component is receiving just one prop but they can accept others.
+The slide component it also comes as `ReactBlueImpGallery` property. In the first example of this page, the slide component is receiving just one prop but they can accept others.
 
 :nut_and_bolt:`source` for image or video resource, this is an alias of `href` also valid for images but not for video slides.
 
