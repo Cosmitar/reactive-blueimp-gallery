@@ -185,7 +185,7 @@ start storybook
 Have fun :tada:
 
 ### Contributing
-Pull requests and issues are welcome. If you've found an bug, please open an issue.
+Pull requests and issues are welcome. If you've found a bug, please open an issue.
 
 ### License
 MIT
