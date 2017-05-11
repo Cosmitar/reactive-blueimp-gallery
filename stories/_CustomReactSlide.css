@@ -13,3 +13,15 @@
     align-items: middle;
     justify-content: center;
 }
+
+.slide-content .react-slide.static-content {
+    background-color: #d3b417;
+}
+
+.slide-content .react-slide.self-update-content {
+    background-color: #75ba75;
+}
+
+.slide-content .react-slide.synched-content {
+    background-color: orange;
+}
