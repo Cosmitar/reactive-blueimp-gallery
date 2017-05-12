@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -s ./public -p 9001",
     "test-storybook": "storyshots",
-    "build-storybook": "build-storybook -s public -o .out",
+    "build-storybook": "export BABEL_ENV=stage && build-storybook -s public -o .out",
     "deploy-storybook": "storybook-to-ghpages",
     "prepublish": "npm run build"
   },
