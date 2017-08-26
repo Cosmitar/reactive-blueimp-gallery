@@ -143,6 +143,7 @@ In the example above we're adding a `<p>` element into default slide overlay. Al
 </tr>
 </tbody>
 </table>
+
 ### Slides
 The slide component it also comes as `ReactBlueImpGallery` property. In the first example of this page, the slide component is receiving just one prop but they can accept others.
 
