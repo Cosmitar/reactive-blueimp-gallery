@@ -58,9 +58,7 @@ const source3 = [{
 storiesOf('React BlueImp Gallery', module)
   .add('Basic usage', () => {
     return (
-      <ReactGallery>
-        { minimumSource.map(item => <ReactGallery.Slide { ...item } key={ item.source } />) }
-      </ReactGallery>
+      <ReactGallery source={minimumSource} />
     );
   })
   .add('With event callbacks', () => {

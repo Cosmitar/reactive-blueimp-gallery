@@ -16,7 +16,7 @@ import ReactGallery from 'reactive-blueimp-gallery';
 
 Set a source with minimum requirements
 ```javascript
-const sources = [{
+const images = [{
   source: 'images/banana.jpg',
 }, {
   source: 'images/apples.jpg',
@@ -27,9 +27,7 @@ const sources = [{
 
 Use the component
 ```javascript
-<ReactGallery>
-  { sources.map(item => <ReactGallery.Slide { ...item } key={ item.source } />) }
-</ReactGallery>
+<ReactGallery source={images} />
 ```
 
 and that's it! :raised_hands: a working version of BlueImp gallery into your React application :muscle:.

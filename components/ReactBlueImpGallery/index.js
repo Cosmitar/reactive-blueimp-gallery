@@ -114,6 +114,7 @@ class ReactBlueImpGallery extends React.Component {
       inlineCarousel,
       className,
       children,
+      source,
     } = this.props;
 
     const { id } = this.state;
@@ -123,11 +124,19 @@ class ReactBlueImpGallery extends React.Component {
     return (
       <div id={`${id}-links`} style={elementsVisibilityStyle} className={`${customClassName} ${constants.DEFAULT_CLASS_NAME}-thumbnails`}>
 
-        { children.map((child) => {
-          const key = child.key || object_to_key(child.props);
-          this.slidesByKey[key] = child;
-          return React.cloneElement(child, { key, 'data-key': key });
-        })}
+        { source.length ?
+          source.map((src) => {
+            return (
+              <Slide { ...src } key={ src.source } />
+            );
+          })
+          :
+          children.map((child) => {
+            const key = child.key || object_to_key(child.props);
+            this.slidesByKey[key] = child;
+            return React.cloneElement(child, { key, 'data-key': key });
+          })
+        }
 
       </div>
     );
@@ -164,6 +173,7 @@ ReactBlueImpGallery.propTypes = {
   options: PropTypes.object,
   className: PropTypes.string,
   overlays: PropTypes.any,
+  source: PropTypes.array,
 };
 
 ReactBlueImpGallery.defaultProps = {
@@ -173,6 +183,7 @@ ReactBlueImpGallery.defaultProps = {
   options: {},
   className: '',
   overlays: null,
+  source: [],
 };
 
 ReactBlueImpGallery.Slide = Slide;
