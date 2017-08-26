@@ -52,9 +52,7 @@ ReactBlueImpGallery accepts the following props:
 <td>withControls</td><td>boolean</td><td>to initialize the Gallery with visible controls.
 
 ```javascript
-<ReactGallery withControls>
-  ...
-</ReactGallery>
+<ReactGallery withControls source={images} />
 ```
 </td>
 </tr>
@@ -62,9 +60,7 @@ ReactBlueImpGallery accepts the following props:
 <td>inlineCarousel</td><td>boolean</td><td>to display the images in an inline carousel instead of a lightbox.
 
 ```javascript
-<ReactGallery inlineCarousel>
-  ...
-</ReactGallery>
+<ReactGallery inlineCarousel source={images} />
 ```
 </td>
 </tr>
@@ -76,9 +72,8 @@ ReactBlueImpGallery accepts the following props:
   options={{
     transitionSpeed: 200,
   }}
->
-  ...
-</ReactGallery>
+  source={images}
+/>
 ```
 </td>
 </tr>
@@ -96,9 +91,8 @@ And finally, into `options` prop you can find a useful custom event `onopen` tha
   options={{
     onopen: gal => gal.pause(),
   }}
->
-...
-</ReactGallery>
+  source={images}
+/>
 ```
 ### Custom Overlays
 Reactive BlueImp Gallery come with a helper component to customize slides overlay. `Overlays` component allows you to include extra HTML elements over a slide and also has props to quick set up for existing elements. `Overlays` is part of `ReactBlueImpGallery` and can be accesed as an attribute of it.
@@ -110,43 +104,67 @@ const customOverlays = (
 );
 <ReactGallery
   overlays={customOverlays}
->
-...
-</ReactGallery>
+  source={images}
+/>
 ```
 
 In the example above we're adding a `<p>` element into default slide overlay. Also you can define `Overlays` props
-
-:nut_and_bolt:`className` to specify overlay CSS.
-
-:nut_and_bolt:`noTitle` to hide default title element.
-
-:nut_and_bolt:`noArrows` to hide default arrows (next/prev) elements.
-
-:nut_and_bolt:`noClose` to hide default close (x) element.
-
-:nut_and_bolt:`noPlayPause` to hide default play/pause element.
-
-:nut_and_bolt:`noIndicator` to hide default slide indicator (ooo) elements.
+<table class="rich-diff-level-zero">
+<thead class="rich-diff-level-one">
+<tr><td><b>Property</b></td><td><b>Type</b></td><td><b>Description</b></td></tr>
+</thead>
+<tbody class="rich-diff-level-one">
+<tr>
+<td>className</td><td>string</td><td>to specify overlay CSS.</td>
+</tr>
+<tr>
+<td>noTitle</td><td>boolean</td><td>to hide default title element.</td>
+</tr>
+<tr>
+<td>noArrows</td><td>boolean</td><td>to hide default arrows (next/prev) elements.</td>
+</tr>
+<tr>
+<td>noClose</td><td>boolean</td><td>to hide default close (x) element.</td>
+</tr>
+<tr>
+<td>noPlayPause</td><td>boolean</td><td>to hide default play/pause element.
 
 ```javascript
 <ReactGallery
   overlays={<ReactGallery.Overlays noPlayPause noTitle />}
->
-...
-</ReactGallery>
+  source={images}
+/>
 ```
 
+</td>
+</tr>
+<tr>
+<td>noIndicator</td><td>boolean</td><td>to hide default slide indicator (ooo) elements.</td>
+</tr>
+</tbody>
+</table>
 ### Slides
 The slide component it also comes as `ReactBlueImpGallery` property. In the first example of this page, the slide component is receiving just one prop but they can accept others.
 
-:nut_and_bolt:`source` for image or video resource, this is an alias of `href` also valid for images but not for video slides.
-
-:nut_and_bolt:`thumbanil` to set a resource to show in thumbanils. `source` will be used if `thumbnails` is undefined.
-
-:nut_and_bolt:`type` to set slide mime type. `image/jpeg` by default.
-
-:nut_and_bolt:`title` info to show in the slide overlay.
+<table class="rich-diff-level-zero">
+<thead class="rich-diff-level-one">
+<tr><td><b>Property</b></td><td><b>Type</b></td><td><b>Description</b></td></tr>
+</thead>
+<tbody class="rich-diff-level-one">
+<tr>
+<td>source</td><td>string</td><td>for image or video resource, this is an alias of `href` also valid for images but not for video slides.</td>
+</tr>
+<tr>
+<td>thumbanil</td><td>string</td><td>to set a resource to show in thumbanils. `source` will be used if `thumbnails` is undefined.</td>
+</tr>
+<tr>
+<td>type</td><td>string</td><td> to set slide mime type. `image/jpeg` by default.</td>
+</tr>
+<tr>
+<td>title</td><td>string</td><td> info to show in the slide overlay.</td>
+</tr>
+</tbody>
+</table>
 
 ### :sparkles: Slides with React content :rocket:
 BlueImp Gallery supports different [slide types](https://github.com/blueimp/Gallery#additional-content-types) with a very good approach to customize content types. This way it supports HTML5, Youtube and Vimeo videos. Taking advantage of that smart design, this lib add a new content type to handle slide content with React components.
