@@ -33,38 +33,61 @@ Use the component
 and that's it! :raised_hands: a working version of BlueImp gallery into your React application :muscle:.
 
 ### Options
-As a wrapper, this lib has some shortcut configurations for a [full list of options](https://github.com/blueimp/Gallery#options) that BlueImp Gallery offers.
+As a HOC, this lib has some shortcut configurations for a [full list of options](https://github.com/blueimp/Gallery#options) that BlueImp Gallery offers.
 
 ReactBlueImpGallery accepts the following props:
 
-:nut_and_bolt:`id` and :nut_and_bolt:`className` are simple attributes rendered in gallery HTML, mainly to handle presentational aspects.
+<table class="rich-diff-level-zero">
+<thead class="rich-diff-level-one">
+<tr><td><b>Property</b></td><td><b>Type</b></td><td><b>Description</b></td></tr>
+</thead>
+<tbody class="rich-diff-level-one">
+<tr>
+<td>id</td><td>number</td><td>just an element identifier, attribute rendered into gallery HTML.</td>
+</tr>
+<tr>
+<td>className</td><td>string</td><td>class name to handle presentational aspects, attribute rendered into gallery HTML.</td>
+</tr>
+<tr>
+<td>withControls</td><td>boolean</td><td>to initialize the Gallery with visible controls.
 
-:nut_and_bolt:`withControls` to initialize the Gallery with visible controls
 ```javascript
 <ReactGallery withControls>
-...
+  ...
 </ReactGallery>
 ```
+</td>
+</tr>
+<tr>
+<td>inlineCarousel</td><td>boolean</td><td>to display the images in an inline carousel instead of a lightbox.
 
-:nut_and_bolt:`inlineCarousel` to display the images in an inline carousel instead of a lightbox
 ```javascript
 <ReactGallery inlineCarousel>
-...
+  ...
 </ReactGallery>
 ```
+</td>
+</tr>
+<tr>
+<td>options</td><td>object</td><td>to send to BlueImp Gallery any of the <a href="https://github.com/blueimp/Gallery#options">supported options</a>.
 
-:nut_and_bolt:`options` to send to BlueImp Gallery any of the [supported options](https://github.com/blueimp/Gallery#options).
 ```javascript
 <ReactGallery
   options={{
     transitionSpeed: 200,
   }}
 >
-...
+  ...
 </ReactGallery>
 ```
-
-:nut_and_bolt:`overlays` to send custom overlays for slides. Lets talk about this in the [next section](https://github.com/Cosmitar/reactive-blueimp-gallery#custom-overlays)
+</td>
+</tr>
+<tr>
+<td>overlays</td><td>ReactBlueImpGallery.Overlays</td><td>to send custom overlays for slides. Lets talk about this in the <a href="https://github.com/Cosmitar/reactive-blueimp-gallery#custom-overlays">next section</a>.
+</td>
+</tr>
+</tbody>
+</table>
 
 And finally, into `options` prop you can find a useful custom event `onopen` that return the original BlueImp Gallery instance allowing API control. See full API methods [here](https://github.com/blueimp/Gallery#api-methods)
 
