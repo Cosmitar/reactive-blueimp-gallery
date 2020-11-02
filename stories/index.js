@@ -43,6 +43,7 @@ const source3 = [{
   href: 'http://0.s3.envato.com/h264-video-previews/80fad324-9db4-11e3-bf3d-0050569255a8/490527.mp4',
   type: 'video/mp4',
   poster: 'images/thumbnails/back-to-school.jpg',
+  'data-poster': 'images/thumbnails/back-to-school.jpg',
 }, {
   href: 'images/banana.jpg',
   thumbnail: 'images/thumbnails/banana.jpg',
