@@ -72,7 +72,7 @@ class Slide extends React.Component {
       type,
       pw,
       ph,
-      border,
+      tumbstyle,
       template,
       children, // eslint-disable-line no-unused-vars
       synchedData, // eslint-disable-line no-unused-vars
@@ -86,7 +86,7 @@ class Slide extends React.Component {
       React.cloneElement(template, { ...Object.assign({}, props, { 'data-trigger' : true }) })
     : (
         <a href={src} title={_title} type={type} {...Object.assign({}, props, { 'data-trigger': true })}>
-            <img width={pw} height={ph} src={tn} alt={_title} style="border: {border}" loading="lazy" />
+            <img width={pw} height={ph} src={tn} alt={_title} style={tumbstyle} loading='lazy' />
         </a>
       );
   }
@@ -101,7 +101,7 @@ Slide.propTypes = {
   type: PropTypes.string,
   pw: PropTypes.any,
   ph: PropTypes.any,
-  border: PropTypes.string,
+  tumbstyle: PropTypes.string,
   template: PropTypes.any,
   synchedData: PropTypes.object,
 };
@@ -115,7 +115,7 @@ Slide.defaultProps = {
   type: 'image/jpeg',
   pw: 70,
   ph: 70,
-  border: '1px solid #000',
+  tumbstyle: 'border: 1px solid #000',
   template: null,
   synchedData: {},
 };
