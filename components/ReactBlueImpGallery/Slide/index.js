@@ -98,6 +98,8 @@ Slide.propTypes = {
   poster: PropTypes.string,
   title: PropTypes.string,
   type: PropTypes.string,
+  pw: PropTypes.any,
+  ph: PropTypes.any,
   template: PropTypes.any,
   synchedData: PropTypes.object,
 };
@@ -109,6 +111,8 @@ Slide.defaultProps = {
   poster: null,
   title: '',
   type: 'image/jpeg',
+  pw: 70,
+  ph: 70,
   template: null,
   synchedData: {},
 };
