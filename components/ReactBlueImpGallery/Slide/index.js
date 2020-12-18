@@ -84,7 +84,7 @@ class Slide extends React.Component {
     return template ?
       React.cloneElement(template, { ...Object.assign({}, props, { 'data-trigger' : true }) })
     : (
-        <a href={src} title={_title} type={type} {...Object.assign({}, props, { 'data-trigger': true })}>
+        <a className="inline-block" href={src} title={_title} type={type} {...Object.assign({}, props, { 'data-trigger': true })}>
             <img width={pw} height={ph} src={tn} alt={_title} style={{border: 1 + 'px solid #333', margin: 2 + 'px'}} loading='lazy' />
         </a>
       );
