@@ -70,6 +70,8 @@ class Slide extends React.Component {
       title,
       poster,
       type,
+      pw,
+      ph,
       template,
       children, // eslint-disable-line no-unused-vars
       synchedData, // eslint-disable-line no-unused-vars
@@ -82,8 +84,8 @@ class Slide extends React.Component {
     return template ?
       React.cloneElement(template, { ...Object.assign({}, props, { 'data-trigger' : true }) })
     : (
-        <a href={src} title={_title} type={type} {...Object.assign({}, props, { 'data-trigger': true })}>
-            <img src={tn} alt={_title} />
+        <a className="inline-block" href={src} title={_title} type={type} {...Object.assign({}, props, { 'data-trigger': true })}>
+            <img width={pw} height={ph} src={tn} alt={_title} style={{border: 1 + 'px solid #333', margin: 2 + 'px'}} loading='lazy' />
         </a>
       );
   }
@@ -96,6 +98,8 @@ Slide.propTypes = {
   poster: PropTypes.string,
   title: PropTypes.string,
   type: PropTypes.string,
+  pw: PropTypes.any,
+  ph: PropTypes.any,
   template: PropTypes.any,
   synchedData: PropTypes.object,
 };
@@ -107,6 +111,8 @@ Slide.defaultProps = {
   poster: null,
   title: '',
   type: 'image/jpeg',
+  pw: 70,
+  ph: 70,
   template: null,
   synchedData: {},
 };

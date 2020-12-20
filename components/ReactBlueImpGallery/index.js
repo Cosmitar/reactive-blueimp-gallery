@@ -122,7 +122,7 @@ class ReactBlueImpGallery extends React.Component {
     const customClassName = className ? `${className}-thumbnails` : '';
 
     return (
-      <div id={`${id}-links`} style={elementsVisibilityStyle} className={`${customClassName} ${constants.DEFAULT_CLASS_NAME}-thumbnails`}>
+      <div id={`${id}-links`} style={elementsVisibilityStyle} className={`${customClassName} ${constants.DEFAULT_CLASS_NAME}-thumbnails inline-block`}>
 
         { source.length ?
           source.map((src) => {
