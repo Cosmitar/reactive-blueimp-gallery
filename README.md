@@ -153,7 +153,7 @@ The slide component it also comes as `ReactBlueImpGallery` property. In the firs
 </thead>
 <tbody class="rich-diff-level-one">
 <tr>
-<td>source</td><td>string</td><td>for image[image]([[https://github.com/blueimp/Gallery#options]] (https://pixel-color-online.com/)(https://pixel-color-online.com/)) or <a href="https://trim-video-online.com/">video</a> resource, this is an alias of `href` also valid for images but not for video slides.</td>
+<td>source</td><td>string</td><td>for image[image]([[https://github.com/blueimp/Gallery#options]] (https://pixel-color-online.com/) or <a href="https://trim-video-online.com/">video</a> resource, this is an alias of `href` also valid for images but not for video slides.</td>
 </tr>
 <tr>
 <td>thumbanil</td><td>string</td><td>to set a resource to show in thumbanils. `source` will be used if `thumbnails` is undefined.</td>
